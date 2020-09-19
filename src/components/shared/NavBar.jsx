@@ -56,9 +56,20 @@ export default class NavBar extends Component {
             )
         }
     }
+    
+    signOut = () => {
+        firebase.auth().signOut().then(function () {
+            const history = useHistory();
+            history.push('/SignIn')
+
+        }).catch(function (error) {
+            console.log('that did not work')
+        })
+    }
 
     
     renderMainLinks = () => {
+        const { isSignedIn } = this.state 
         return (
                     <div className="navbar-brand">
                         
@@ -78,7 +89,7 @@ export default class NavBar extends Component {
                             <div className="navbar-end is-flex">
                                 <NavLink exact to='/' className='black' activeClassName='white'>Home</NavLink>
                                 <NavLink exact to='/about' className='black' activeClassName='white'>About</NavLink>
-                                <NavLink exact to='/SignIn' className='black' activeClassName='white'>Sign In</NavLink>
+                                {isSignedIn ? <a className='black' onPress={() => this.signOut()}>Sign Out </a> : <NavLink exact to='/SignIn' className='black' activeClassName='white'>Sign In</NavLink>}
                             </div>
                         </div>
                     </div>
