@@ -8,6 +8,8 @@ import React from 'react'
 
 export const Button = ({ title, className, color, size, onClick, style }) => {
     return (
-    <button className={`button ${className} is-${color} is-${size}`} onClick={onClick} style={style}>{title}</button>
+    <button className={`button ${className} is-${color} is-${size}`} onClick={onClick} style={style}>
+        {title}
+    </button>
     )
 }
