@@ -1,17 +1,26 @@
 {
-  "name": "whichdayz-web",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
+  "main": "sass/mystyles.scss",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "firebase": "^7.19.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-firebaseui": "^4.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "react-slick": "^0.27.10",
+    "react-typical": "^0.1.3",
+    "react-typist": "^2.0.5",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss src/App.css",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -30,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "bulma": "^0.9.0",
+    "node-sass": "^4.14.1"
   }
 }
