@@ -1,10 +1,19 @@
 import React from 'react';
+import { Routes } from './routes';
 
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <header>
+        {/* Navbar */}
+      </header>
+      <main>
+        <Routes/>
+      </main>
+      <footer>
+        {/* Footer */}
+      </footer>
     </div>
   );
 }
