@@ -1,6 +1,6 @@
 import React from 'react' 
 import { teamArr } from '../../data/data'
-import {Card} from '../../components/shared/Card'
+import { Card}  from '../../components'
 
 
 
