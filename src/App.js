@@ -1,10 +1,9 @@
 import React from 'react';
 import { Routes } from './routes';
-import {AuthProvider} from './contexts/AuthContext'
+import {AuthProvider } from './contexts/AuthContext'
 import ThemeContextProvider from './contexts/ThemeContext'
 import { Navbar } from './components';
 import './App.css'
-
 
 function App() {
   return (
