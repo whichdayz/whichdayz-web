@@ -1,12 +1,12 @@
 import React, { Component } from "react"
 import './Firebase.scss'
-import firebase from "firebase"
+import * as firebase from 'firebase/app'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
-firebase.initializeApp({
-  apiKey: "AIzaSyAToTdC6sGDAasB7Hyv-bggticBmOwmfhs",
-  authDomain: "whichdayz-ce21e.firebaseapp.com"
-})
+// firebase.initializeApp({
+//   apiKey: "AIzaSyAToTdC6sGDAasB7Hyv-bggticBmOwmfhs",
+//   authDomain: "whichdayz-ce21e.firebaseapp.com"
+// })
 
 export default class FirebaseSignIn extends Component {
   constructor(props) {

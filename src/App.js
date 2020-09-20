@@ -1,27 +1,26 @@
 import React from 'react';
 import { Routes } from './routes';
-import AuthContextProvider from './contexts/AuthContext'
+import {AuthProvider } from './contexts/AuthContext'
 import ThemeContextProvider from './contexts/ThemeContext'
 import { Navbar } from './components';
 import './App.css'
-
 
 function App() {
   return (
     <div className="App">
       <ThemeContextProvider>
-        <AuthContextProvider>
+        <AuthProvider>
           <header>
             <Navbar/>
             {/* Navbar */}
           </header>
-          <main className='main-container'>
+          <main>
             <Routes/>
           </main>
           <footer>
             {/* Footer */}
           </footer>
-        </AuthContextProvider>
+        </AuthProvider>
       </ThemeContextProvider>
     </div>
   );
