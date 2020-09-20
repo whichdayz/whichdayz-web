@@ -20,7 +20,7 @@ export default function Team() {
             color='success'
             />
         </>
-        <div class='margin is-flex'>
+        <div class='is-flex'>
             {teamArr.map(profile => {
                 return (
                     <Card
