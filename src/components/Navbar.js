@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../images/icon.png'
+import logo from '../images/logo.png'
 import { Button } from './Button'
 import { Hamburger } from './Hamburger'
 
@@ -12,7 +12,7 @@ export const Navbar = () => {
         return hamburger ? setHamburgerName('is-active') : setHamburgerName('')
     }
     return (
-        <nav className="navbar is-spaced is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <nav className="navbar is-spaced is-primary" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <Link to='/' className='navbar-item'>
                     <img 

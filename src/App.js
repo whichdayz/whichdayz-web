@@ -15,7 +15,7 @@ function App() {
             <Navbar/>
             {/* Navbar */}
           </header>
-          <main className='main-container'>
+          <main>
             <Routes/>
           </main>
           <footer>
