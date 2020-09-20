@@ -1,6 +1,10 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
-import { Home, Default } from '../screens'
+import { Switch, Route } from "react-router-dom";
+import { Default } from '../screens'
+import Home from '../screens/Home/Home';
+import About from '../screens/About/About';
+import Team from '../screens/Team/Team';
+import FirebaseSignIn from '../screens/Firebase/FireBaseSignIn'
 
 
 export const Routes = () => {
@@ -9,7 +13,11 @@ export const Routes = () => {
             {/* Home Page */}
             <Route exact path='/' component={Home}/>
             {/* Team Page */}
-            {/* <Route exact path='/team' component={Team}/> */}
+            <Route exact path='/team' component={Team}/>
+            {/* About Route */}
+            <Route exact path='/about' component={About}/>
+            {/* Signin Route */}
+            <Route exact path='/SignIn' component={FirebaseSignIn} />
             {/* Page not found */}
             <Route component={Default}/>
         </Switch>

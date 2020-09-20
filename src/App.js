@@ -3,6 +3,7 @@ import { Routes } from './routes';
 import AuthContextProvider from './contexts/AuthContext'
 import ThemeContextProvider from './contexts/ThemeContext'
 import { Navbar } from './components';
+import './App.css'
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
             <Navbar/>
             {/* Navbar */}
           </header>
-          <main style={{marginTop: '5.5em'}}>
+          <main className='main-container'>
             <Routes/>
           </main>
           <footer>
