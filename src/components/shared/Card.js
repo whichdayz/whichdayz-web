@@ -1,12 +1,12 @@
 import React from 'react' 
-
+import '../styles/Card.scss'
 
 
 
 
 export const Card = ({ imageURL, description, name, title, size }) => {
     return (
-        <div className='card'>
+        <div className='card margin'>
             <div className='card-image'>
                 <figure className={`image is-${size}`}>
                     <img src={imageURL} alt='Profile'/>
@@ -14,8 +14,8 @@ export const Card = ({ imageURL, description, name, title, size }) => {
             </div>
             <div className='card-content'>
                 <div className='media-content'>
-                    <p className='title is-4 is-centered'>{name}</p>
-                    <p className='subtitle is-4 is-centered'>{title}</p>
+                    <p className='title is-4'>{name}</p>
+                    <p className='subtitle is-4'>{title}</p>
                 </div>
                 <div className='content'>
                     {description}
