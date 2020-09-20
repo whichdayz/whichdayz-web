@@ -22,5 +22,6 @@
 - Fix Icon component (Possible Fix: Make Icon seperate component)
 - May have glitches with Fixed Navbar (Possible fix: create a class and change height based on media query)
 - Hamburger button does not open on first click
+- Home Carousel stops on hover?
 
 ## To Add

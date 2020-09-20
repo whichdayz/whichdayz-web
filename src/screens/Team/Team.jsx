@@ -1,6 +1,6 @@
 import React from 'react' 
-import data from '../../images/data'
-import Card from '../../components/shared/Card'
+import { teamArr } from '../../data/data'
+import {Card} from '../../components/shared/Card'
 
 
 
@@ -8,7 +8,7 @@ import Card from '../../components/shared/Card'
 export default function Team() {
     return (
         <div class='container is-centered'>
-            {data.map(profile => {
+            {teamArr.map(profile => {
                 return (
                     <Card
                         size='4by3'
@@ -16,7 +16,6 @@ export default function Team() {
                         title={profile.title}
                         name={profile.name}
                         imageURL={profile.imageURL}
-                        description={profile.description}
                     />
                 )
             })}

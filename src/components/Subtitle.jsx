@@ -8,9 +8,9 @@ import React from 'react'
 // weight -> font weight (light, normal, medium, semibold, bold)
 // fontFamily -> (sans-serif, monospace, primary, secondary)
 
-export const Subtitle = () => ({ title, color, size, alignment, transformation, weight, fontFamily  }) => {
+export const Subtitle = ({ title, className , color, size, alignment, transformation, weight, fontFamily  }) => {
     return (
-        <h2 className={`subtitle has-text-${color} is-size-${size} has-text-${alignment} is-${transformation} has-text-weight-${weight} is-family-${fontFamily}`}>
+        <h2 className={`subtitle ${className} has-text-${color} is-size-${size} has-text-${alignment} is-${transformation} has-text-weight-${weight} is-family-${fontFamily}`}>
             {title}
         </h2>
     )

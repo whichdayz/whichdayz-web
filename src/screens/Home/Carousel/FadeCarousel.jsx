@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 
 
 
-export const FadeCarousel = (props) => {
+export const FadeCarousel = () => {
     const settings = {
         dots: false,
         infinite: true,
@@ -14,15 +14,15 @@ export const FadeCarousel = (props) => {
         autoplaySpeed: 4000,
         adaptiveHeight: true,
         fade: true,
-        speed: 500,
+        speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1,
         focusOnSelect: true
     }
     return (
         <Slider {...settings}>
-            <img src={Desktop}/>
-            <img src={Tablet}/>
+            <img src={Desktop} alt='desktop'/>
+            <img src={Tablet} alt='tablet'/>
         </Slider>
     )
 }

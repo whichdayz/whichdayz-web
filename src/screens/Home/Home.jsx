@@ -1,23 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Home.scss'
 import '../Home/Carousel/FadeCarousel'
 import { FadeCarousel } from '../Home/Carousel/FadeCarousel'
+import { Subtitle, Title } from '../../components'
 
 export default function Home() {
-
-    const [hovered, isHovered] = useState(false);
-
     return (
         <>
-        <section className='hero is-fullheight' id='home'>
-                <div className="home-container">
-                    <h1 className="subtitle is-uppercase has-text-centered has-text-primary is-size-1">our new site is</h1>
-                    <h1 className="title is-uppercase has-text-centered has-text-primary is-size-1">coming soon</h1>
-                    <h1 className="subtitle is-uppercase has-text-centered has-text-primary is-size-1">stay tuned!</h1>
-                </div>
-            </section>
-        <FadeCarousel/>
+            <div className="home-container">
+                <Subtitle title='our new site is' alignment='centered' color='primary' size={1} transformation='uppercase'/>
+                <Title title='coming soon' alignment='centered' color='primary' size={1} transformation='uppercase'/>
+                <Subtitle title='stay tuned!' alignment='centered' color='primary' size={1} transformation='uppercase'/>
+            </div>
+            <FadeCarousel/>
         </>
-
     )
 }
