@@ -1,0 +1,33 @@
+.home-container {
+    position: absolute;
+    z-index: 999;
+    top: 35vh;
+    left: 20%;
+    display: flex;
+    width: 60%;
+    height: 30%;
+    background: rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    justify-content: space-around;
+    background: rgba($color: #000000, $alpha: .5);
+}
+
+@media only screen and (max-width: 1024px) {
+    .home-container {
+        top: 20vh;        
+        width: 80%;
+        left: 10%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .home-container {
+        top: 15vh;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .home-container {
+        top: 10vh;
+    }
+}
+

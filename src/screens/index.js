@@ -1,3 +1,3 @@
-export * from './Home'
-export * from './Team'
+export * from './Home/Home'
+export * from './Team/Team'
 export * from './Default'
