@@ -1,8 +1,5 @@
 import React from 'react' 
-import '../styles/Card.scss'
-
-
-
+import './styles/Card.scss'
 
 export const Card = ({ imageURL, description, name, title, size }) => {
     return (

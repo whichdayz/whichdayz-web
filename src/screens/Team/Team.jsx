@@ -1,8 +1,6 @@
 import React from 'react' 
 import { teamArr } from '../../data/data'
-import { Card } from '../../components/shared/Card'
-import './Team.scss'
-import { Title } from '../../components/Title'
+import { Card, Title }  from '../../components'
 
 
 

@@ -16,7 +16,7 @@ export default function About() {
 
 
     return (
-        <div className='about-container' id='about'>
+        <div className='about-container mt-5' id='about'>
             <section class="hero is-medium is-primary is-bold">
                 <div class="hero-body">
                     <div class="container has-text-centered">

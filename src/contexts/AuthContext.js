@@ -1,22 +1,22 @@
-import React, { Component, createContext } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
+import app from '../firebase'
 
 export const AuthContext = createContext();
 
-class AuthContextProvider extends Component {
-    state = {
-        isAuthenticated: false,
-        user: null
-    }
-    toggleAuth = () => {
-        this.setState({ isAuthenticated: !this.state.isAuthenticated })
-    }
-    render() {
-        return (
-            <AuthContext.Provider value={{...this.state, toggleAuth: this.toggleAuth}}>
-                {this.props.children}
-            </AuthContext.Provider>
-        );
-    }
-}
+export const AuthProvider = ({ children }) => {
+    const [currentUser, setCurrentUser] = useState(null)
+    useEffect(() => {
+        app.auth().onAuthStateChanged(setCurrentUser)
+        console.log(currentUser);
+    }, [currentUser]);
 
-export default AuthContextProvider
+    return (
+        <AuthContext.Provider
+            value={{
+                currentUser
+            }}
+        >
+            {children}
+        </AuthContext.Provider>
+    );
+};
