@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import * as firebase from 'firebase/app'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import './styles/SignUpModal.scss'
+import SignUp from '../screens/SignUp/SignUp'
 
 export const SignUpModal = ({ className, onClick }) => {
 
@@ -18,8 +19,10 @@ export const SignUpModal = ({ className, onClick }) => {
         }
     }
     return (
+        
         <div className={className}>
             <div className='modal-background'>
+                <SignUp/>
                 <StyledFirebaseAuth
                     uiConfig={uiConfig}
                     firebaseAuth={firebase.auth()}
