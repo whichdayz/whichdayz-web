@@ -39,18 +39,21 @@ export const UnAuthenticatedNav = ({logo, hamburgerName, changeClassName}) => {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
+                        <Link to='/login'>
                             <Button 
                                 title='Sign In' 
                                 className='is-light has-text-weight-bold has-text-centered' 
                                 color='primary'
-                                onClick={() => window.location.href='http://localhost:3000/login'}
                             />
+                        </Link>
+                        <Link to='join'>
                             <Button 
-                                title='Get Started' 
-                                className='has-text-weight-bold has-text-centered' 
-                                color='success'
-                                onClick={() => window.location.href='http://localhost:3000/join'}
-                            />
+                                    title='Get Started' 
+                                    className='has-text-weight-bold has-text-centered' 
+                                    color='success'
+                                />
+                        </Link>
+                            
                         </div>
                     </div>
                 </div>
