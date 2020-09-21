@@ -9,7 +9,7 @@ import { Title } from '../../components/Title'
 
 export default function Team() {
     return (
-        <div class='is-columned '>
+        <div class='is-columned'>
         <>
             <Title
             size='1'
