@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Hamburger, Button } from '../index'
 
 
-export const UnAuthenticatedNav = ({logo, hamburgerName, changeClassName}) => {
+export const UnAuthenticatedNav = ({logo, hamburgerName, changeClassName, onClick }) => {
     return (
         <nav className="navbar is-spaced is-primary" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
@@ -39,21 +39,18 @@ export const UnAuthenticatedNav = ({logo, hamburgerName, changeClassName}) => {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                        <Link to='/login'>
                             <Button 
                                 title='Sign In' 
                                 className='is-light has-text-weight-bold has-text-centered' 
                                 color='primary'
+                                onClick={onClick}
                             />
-                        </Link>
-                        <Link to='join'>
                             <Button 
                                     title='Get Started' 
                                     className='has-text-weight-bold has-text-centered' 
                                     color='success'
+                                    onClick={onClick}
                                 />
-                        </Link>
-                            
                         </div>
                     </div>
                 </div>

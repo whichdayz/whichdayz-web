@@ -1,8 +1,10 @@
 import React, { useState, useContext } from 'react'
 import logo from '../images/logo.png'
+import './styles/NavBar.scss'
 import { AuthContext } from '../contexts/AuthContext'
 import app from '../firebase'
 import { UnAuthenticatedNav,  AuthenticatedNav } from './shared'
+import { SignUpModal } from './SignUpModal'
 
 export const Navbar = () => {
     const { currentUser } = useContext(AuthContext)
@@ -12,6 +14,7 @@ export const Navbar = () => {
         setHamburger(!hamburger)
         return hamburger ? setHamburgerName('is-active') : setHamburgerName('')
     }
+    const [modalOpen, setModal ] = useState(false)
     const signOut = () => {
         app
             .auth()
@@ -23,8 +26,35 @@ export const Navbar = () => {
             console.log(error)
         });
     }
-    const toggleNav = () => {
-        return currentUser ? <AuthenticatedNav
+
+    const modalRender = () => {
+        {
+        return <SignUpModal
+            className={modalOpen ? 'modal is-active' : 'modal'} 
+            />  
+        }
+    }
+    // const toggleNav = () => {
+    //     return currentUser ? <AuthenticatedNav
+    //                             logo={logo} 
+    //                             hamburgerName={hamburgerName} 
+    //                             changeClassName={changeClassName}
+    //                             signOut={signOut}
+    //                             currentUser={currentUser}
+    //                         /> 
+    //                         : 
+    //                         <UnAuthenticatedNav 
+    //                             logo={logo} 
+    //                             hamburgerName={hamburgerName} 
+    //                             changeClassName={changeClassName}
+    //                             modalClick={modalClick}
+    //                         />
+    // }
+    return (
+        // toggleNav(),
+        // modalRender()
+        <>
+        {currentUser ? <AuthenticatedNav
                                 logo={logo} 
                                 hamburgerName={hamburgerName} 
                                 changeClassName={changeClassName}
@@ -36,9 +66,12 @@ export const Navbar = () => {
                                 logo={logo} 
                                 hamburgerName={hamburgerName} 
                                 changeClassName={changeClassName}
-                            />
-    }
-    return (
-        toggleNav()
+                                onClick={() => setModal(true)}
+        /> }
+        <SignUpModal
+            className={modalOpen ? 'modal is-active' : 'display-none'}
+            onClick={() => setModal(false)} 
+        /> 
+        </> 
     )
 }
