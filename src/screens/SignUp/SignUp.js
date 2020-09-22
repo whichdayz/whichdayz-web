@@ -19,8 +19,9 @@ const SignUp = ({ history }) => {
     return (
         <div>
             <Title title='Sign Up' />
-            <form onSubmit={handleSignUp}>
-                <label>
+            {/* <div class='column'> */}
+            <form class='is-flex' onSubmit={handleSignUp}>
+                <label class='mr-6'>
                     Email
                     <input name="email" type='email' placeholder='Email'/>
                 </label>
@@ -30,6 +31,7 @@ const SignUp = ({ history }) => {
                 </label>
                 <button type='submit'>Sign Up</button>
             </form>
+            {/* </div> */}
         </div>
     )
 }
