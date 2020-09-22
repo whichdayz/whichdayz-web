@@ -18,7 +18,7 @@ export default function Team() {
             color='success'
             />
         </>
-        <div class='is-flex'>
+        <div class='columns'>
             {teamArr.map(profile => {
                 return (
                     <Card
