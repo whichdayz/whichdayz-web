@@ -22,15 +22,18 @@ export const SignUpModal = ({ className, onClick }) => {
         
         <div className={className}>
             <div className='modal-background'>
+                <div class='modal-content'>
+                <button
+                onClick={onClick}
+                class='delete is-large'
+                />
                 <SignUp/>
                 <StyledFirebaseAuth
                     uiConfig={uiConfig}
                     firebaseAuth={firebase.auth()}
                 />
-                <button
-                onClick={onClick}
-                class='delete is-large'
-                />
+                </div>
+                {/* <button onClick={onClick}class="modal-close is-large" aria-label="close"></button> */}
             </div>
         </div>
 
