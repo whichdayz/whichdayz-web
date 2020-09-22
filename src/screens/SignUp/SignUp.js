@@ -18,18 +18,18 @@ const SignUp = ({ history }) => {
     }, [history])
     return (
         <div>
-            <Title title='Sign Up' />
+            <Title title='Sign Up' alignment='centered' />
             {/* <div class='column'> */}
-            <form class='is-flex' onSubmit={handleSignUp}>
-                <label class='mr-6'>
-                    Email
-                    <input name="email" type='email' placeholder='Email'/>
-                </label>
-                <label>
-                    Password
-                    <input name="password" type='password' placeholder='Password'/>
-                </label>
-                <button type='submit'>Sign Up</button>
+            <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onSubmit={handleSignUp}>
+                {/* <label class='mr-6'>
+                    Email */}
+                    <input class='mb-4' name="email" type='email' placeholder='Email'/>
+                {/* </label> */}
+                {/* <label> */}
+                    {/* Password */}
+                    <input class='mb-4' name="password" type='password' placeholder='Password'/>
+                {/* </label> */}
+                <button class='mb-6' type='submit'>Sign Up</button>
             </form>
             {/* </div> */}
         </div>
