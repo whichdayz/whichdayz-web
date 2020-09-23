@@ -7,16 +7,16 @@ import './App.css'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <ThemeProvider>
         <AuthProvider>
           <header>
             <Navbar/>
             {/* Navbar */}
           </header>
-          <main>
+          <>
             <Routes/>
-          </main>
+          </>
           <footer>
             {/* Footer */}
           </footer>

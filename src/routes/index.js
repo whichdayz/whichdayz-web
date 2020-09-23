@@ -9,25 +9,31 @@ import FirebaseSignIn from '../screens/Firebase/FireBaseSignIn'
 import Login from '../screens/Login/Login'
 import SignUp from '../screens/SignUp/SignUp'
 import { Landing } from '../screens/Landing/Landing';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 
 export const Routes = () => {
     const { currentUser } = useContext(AuthContext)
+    const { isLightTheme, light, dark } = useContext(ThemeContext);
+    const theme = isLightTheme ? light : dark;
+    console.log(theme);
     return (
-        <Switch>
-            {/* Home Page */}
-            <Route exact path='/' render={props => (currentUser ? <Home/> : <Landing/>)}/>
-            <Route exact path='/login' component={Login}/>
-            <Route exact path='/join' component={SignUp}/>
+        <main style={{background: `${theme.bg}`}}>
+            <Switch>
+                {/* Home Page */}
+                <Route exact path='/' render={props => (currentUser ? <Home/> : <Landing/>)}/>
+                <Route exact path='/login' component={Login}/>
+                <Route exact path='/join' component={SignUp}/>
 
-            {/* Team Page */}
-            <Route exact path='/team' component={Team}/>
-            {/* About Route */}
-            <Route exact path='/about' component={About}/>
-            {/* Signin Route */}
-            <Route exact path='/SignIn' component={FirebaseSignIn} />
-            {/* Page not found */}
-            <Route component={Default}/>
-        </Switch>
+                {/* Team Page */}
+                <Route exact path='/team' component={Team}/>
+                {/* About Route */}
+                <Route exact path='/about' component={About}/>
+                {/* Signin Route */}
+                <Route exact path='/SignIn' component={FirebaseSignIn} />
+                {/* Page not found */}
+                <Route component={Default}/>
+            </Switch>
+        </main>
     )
 }

@@ -8,7 +8,7 @@ export const ThemeProvider = ({ children }) => {
   const [light, setLight] = useState({
     syntax: '#555',
     ui: '#ddd',
-    bg: '#eee',
+    bg: 'gray',
     nav: 'primary',
     drkModeBtn: 'light'
   });
@@ -16,7 +16,7 @@ export const ThemeProvider = ({ children }) => {
   const [dark, setDark] = useState({
     syntax: '#ddd',
     ui: '#333',
-    bg: '#555',
+    bg: 'white',
     nav: 'black',
     drkModeBtn: 'dark'
   });

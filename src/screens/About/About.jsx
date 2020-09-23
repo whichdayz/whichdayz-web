@@ -16,11 +16,11 @@ export default function About() {
 
 
     return (
-        <div className='about-container mt-5' id='about'>
-            <section class="hero is-medium is-primary is-bold">
-                <div class="hero-body">
-                    <div class="container has-text-centered">
-                    <h1 class="is-size-3">
+        <div className='about-container pt-5' id='about'>
+            <section className="hero is-medium is-primary is-bold">
+                <div className="hero-body">
+                    <div className="container has-text-centered">
+                    <h1 className="is-size-3">
                         Search for your favorite skilled{' '}
                         <Typical
                             wrapper='b'
@@ -34,7 +34,7 @@ export default function About() {
                         />
                     </h1>
                     <h1
-                    class="is-size-3"
+                    className="is-size-3"
                     >{ finished ? 
                     <Typist
                     cursor={{
@@ -44,7 +44,7 @@ export default function About() {
                         by location, day and time
                     </Typist> : null}
                     </h1>
-                    {/* <h2 class="subtitle">
+                    {/* <h2 className="subtitle">
                         WhichDayZ is a mobile application which taps into your favorite skilled professional schedule such as barbers, baristas, hair stylists, etc.<br></br>Their flexibility can vary from different venues and time frames.<br></br>
                          WhichDayZ allows you to follow skilled profesionals of your desire so there is no confusion on when and what time to go visit
                     </h2> */}
