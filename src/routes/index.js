@@ -9,7 +9,7 @@ import Team from '../screens/Team/Team';
 import FirebaseSignIn from '../screens/Firebase/FireBaseSignIn'
 import Login from '../screens/Login/Login'
 import SignUp from '../screens/SignUp/SignUp'
-import PrivateRoute from './PrivateRoute'
+// import PrivateRoute from './PrivateRoute'
 import { Landing } from '../screens/Landing/Landing';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { FreelancerProfile } from '../screens/Profile/FreelancerProfile';
@@ -38,6 +38,8 @@ export const Routes = () => {
                     exact path='/join' 
                     component={SignUp}
                 />
+                {/* Private Route not working because it already is using the render prop */}
+                {/* Must make 2 seperate routes to use private route eg. '/userhome', '/freelancerhome'  */}
                 {/* <PrivateRoute 
                     exact path='/profile'
                     render={() => (currentUser.displayName === 'yes' ? <FreelancerProfile/> : <UserProfile/> )}
