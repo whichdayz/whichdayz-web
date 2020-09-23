@@ -9,12 +9,16 @@ export const ThemeProvider = ({ children }) => {
     syntax: '#555',
     ui: '#ddd',
     bg: '#eee',
+    nav: 'primary',
+    drkModeBtn: 'light'
   });
   // eslint-disable-next-line
   const [dark, setDark] = useState({
     syntax: '#ddd',
     ui: '#333',
     bg: '#555',
+    nav: 'black',
+    drkModeBtn: 'dark'
   });
   const toggleTheme = () => {
     setIsLightTheme(!isLightTheme);
@@ -32,23 +36,3 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-
-// class ThemeContextProvider extends Component {
-//     state = {
-//         isLightTheme: true,
-//         light: { syntax: '#555', ui: '#ddd', bg: '#eee' },
-//         dark: { syntax: '#ddd', ui: '#333', bg: '#555'}
-//     }
-//     toggleTheme = () => {
-//         this.setState({ isLightTheme: !this.state.isLightTheme });
-//     }
-//     render() {
-//         return (
-//             <ThemeContext.Provider value={{...this.state, toogleTheme: this.toogleTheme}}>
-//                 {this.props.children}
-//             </ThemeContext.Provider>
-//         );
-//     }
-// }
-
-// export default ThemeContextProvider

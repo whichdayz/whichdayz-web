@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Hamburger, Button } from '../index'
 
-export const AuthenticatedNav = ({ logo, hamburgerName, changeClassName, currentUser, signOut }) => {
+export const AuthenticatedNav = ({ logo, hamburgerName, changeClassName, currentUser, signOut, isLightTheme, light, dark, toggleTheme }) => {
+    const theme = isLightTheme ? light : dark
     return (
-        <nav className="navbar is-spaced is-primary" role="navigation" aria-label="main navigation">
+        <nav className={`navbar is-spaced is-${theme.nav}`} role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
                         <Link to='/' className='navbar-item'>
                             <img 
@@ -39,6 +40,12 @@ export const AuthenticatedNav = ({ logo, hamburgerName, changeClassName, current
                             <div className="navbar-item">
                             <h1>{`Welcome ${currentUser.email}`}</h1>
                                 <div className="buttons">
+                                    <Button
+                                        title={isLightTheme ? 'Light': 'Dark'}
+                                        className='has-text-weight-bold has-text-centered'
+                                        color={theme.drkModeBtn}
+                                        onClick={toggleTheme}
+                                    />
                                     <Button 
                                         title='Sign Out' 
                                         className='is-light has-text-weight-bold has-text-centered' 
