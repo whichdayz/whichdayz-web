@@ -21,7 +21,7 @@ export const Routes = () => {
         <main style={{background: `${theme.bg}`}}>
             <Switch>
                 {/* Home Page */}
-                <Route exact path='/' render={props => (currentUser ? <Home/> : <Landing/>)}/>
+                <Route exact path='/' render={() => (currentUser ? <Home/> : <Landing/>)}/>
                 <Route exact path='/login' component={Login}/>
                 <Route exact path='/join' component={SignUp}/>
 
