@@ -4,6 +4,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { Navbar } from './components';
 import './App.css'
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -12,14 +13,9 @@ function App() {
         <AuthProvider>
           <header>
             <Navbar/>
-            {/* Navbar */}
           </header>
-          <>
             <Routes/>
-          </>
-          <footer>
-            {/* Footer */}
-          </footer>
+            <Footer/>
         </AuthProvider>
       </ThemeProvider>
     </div>

@@ -52,7 +52,10 @@ export const AuthenticatedNav = ({
                         </div>
                         <div className="navbar-end">
                             <div className="navbar-item">
-                            <h1>{`Welcome ${currentUser.email}`}</h1>
+                                <figure class="image is-128x128">
+                                    <img src={currentUser.photoURL} alt='avatar' className='is-rounded' style={{maxHeight: '100%'}}/>
+                                </figure>
+                                <h1>{`Welcome ${currentUser.email}`}</h1>
                                 <div className="buttons">
                                     <Button
                                         title={isLightTheme ? '🌚': '🌝'}
