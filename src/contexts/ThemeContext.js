@@ -10,7 +10,7 @@ export const ThemeProvider = ({ children }) => {
     ui: '#ddd',
     bg: 'gray',
     nav: 'primary',
-    drkModeBtn: 'light'
+    drkModeBtn: 'dark'
   });
   // eslint-disable-next-line
   const [dark, setDark] = useState({
@@ -18,7 +18,7 @@ export const ThemeProvider = ({ children }) => {
     ui: '#333',
     bg: 'white',
     nav: 'black',
-    drkModeBtn: 'dark'
+    drkModeBtn: 'light'
   });
   const toggleTheme = () => {
     setIsLightTheme(!isLightTheme);
