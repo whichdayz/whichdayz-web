@@ -2,15 +2,18 @@ import React, {useContext} from 'react'
 import { Switch, Route } from "react-router-dom";
 import { AuthContext } from '../contexts/AuthContext'
 import { Default } from '../screens'
-import UserHome from '../screens/UserHome/UserHome';
-import FreelancerHome from '../screens/FreelancerHome/FreelancerHome';
+import UserHome from '../screens/Home/UserHome';
+import FreelancerHome from '../screens/Home/FreelancerHome';
 import About from '../screens/About/About';
 import Team from '../screens/Team/Team';
 import FirebaseSignIn from '../screens/Firebase/FireBaseSignIn'
 import Login from '../screens/Login/Login'
 import SignUp from '../screens/SignUp/SignUp'
+import PrivateRoute from './PrivateRoute'
 import { Landing } from '../screens/Landing/Landing';
 import { ThemeContext } from '../contexts/ThemeContext';
+import { FreelancerProfile } from '../screens/Profile/FreelancerProfile';
+import { UserProfile } from '../screens/Profile/UserProfile';
 
 
 export const Routes = () => {
@@ -25,7 +28,7 @@ export const Routes = () => {
                 {/* If current user is not validated he will see Landing else if he is a freelancer he will FreelanceHome else he will see UserHome */}
                 <Route 
                     exact path='/' 
-                    render={() => (currentUser === null ? <Landing/> : currentUser.displayName === 'yes' ?  <FreelancerHome/> : <UserHome/>)}
+                    render={() => (currentUser === null ? <Landing/> : currentUser.displayName === 'yes' ?  <FreelancerHome/> : <UserHome/> )}
                 />
                 <Route 
                     exact path='/login' 
@@ -35,7 +38,14 @@ export const Routes = () => {
                     exact path='/join' 
                     component={SignUp}
                 />
-
+                {/* <PrivateRoute 
+                    exact path='/profile'
+                    render={() => (currentUser.displayName === 'yes' ? <FreelancerProfile/> : <UserProfile/> )}
+                /> */}
+                <Route 
+                    exact path='/profile'
+                    render={() => (currentUser.displayName === 'yes' ? <FreelancerProfile/> : <UserProfile/> )}
+                />
                 {/* Team Page */}
                 <Route 
                     exact path='/team' 

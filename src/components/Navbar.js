@@ -4,8 +4,10 @@ import app from '../firebase'
 import { UnAuthenticatedNav,  AuthenticatedNav } from './shared'
 import { AuthContext } from '../contexts/AuthContext'
 import { ThemeContext } from '../contexts/ThemeContext'
+import { useHistory } from 'react-router'
 
 export const Navbar = () => {
+    const history = useHistory();
   const { isLightTheme, light, dark, toggleTheme } = useContext(ThemeContext)
     const { currentUser, setCurrentUser } = useContext(AuthContext)
     const [hamburger, setHamburger] = useState(false)
@@ -18,12 +20,13 @@ export const Navbar = () => {
         app
             .auth()
             .signOut()
-        .then(() => {
-          setCurrentUser(null)
-        })
-        .then(function() {
-            console.log('sign out successful')
-        })
+            .then(() => history.push('/'))
+            .then(() => {
+                setCurrentUser(null)
+            })
+            .then(function() {
+                console.log('sign out successful')
+            })
         .catch(function(error) {
             alert(error)
         });
