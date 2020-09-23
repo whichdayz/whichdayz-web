@@ -1,14 +1,14 @@
 import React from 'react';
 import { Routes } from './routes';
-import {AuthProvider } from './contexts/AuthContext'
-import ThemeContextProvider from './contexts/ThemeContext'
+import { AuthProvider } from './contexts/AuthContext'
+import { ThemeProvider } from './contexts/ThemeContext'
 import { Navbar } from './components';
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <ThemeContextProvider>
+      <ThemeProvider>
         <AuthProvider>
           <header>
             <Navbar/>
@@ -21,7 +21,7 @@ function App() {
             {/* Footer */}
           </footer>
         </AuthProvider>
-      </ThemeContextProvider>
+      </ThemeProvider>
     </div>
   );
 }
