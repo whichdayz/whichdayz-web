@@ -1,9 +1,11 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { withRouter } from 'react-router';
 import { Title } from '../../components';
 import app from '../../firebase'
+import { Subtitle } from '../../components/Subtitle'
 
 const SignUp = ({ history }) => {
+    const [ errorMessage, setErrorMessage ] = useState('')
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
         const { email, password } = event.target.elements;
@@ -13,7 +15,7 @@ const SignUp = ({ history }) => {
                 .createUserWithEmailAndPassword(email.value, password.value);
             history.push('/');
         } catch (error) {
-            alert(error)
+            setErrorMessage(`${error}`)
         }
     }, [history])
     return (
@@ -30,8 +32,12 @@ const SignUp = ({ history }) => {
                     <input class='mb-4' name="password" type='password' placeholder='Password'/>
                 {/* </label> */}
                 <button class='mb-6' type='submit'>Sign Up</button>
+                <p class='has-text-color-danger'></p>
             </form>
-            {/* </div> */}
+            <Subtitle
+            color='danger'
+            title={errorMessage ? errorMessage : 'display-none'}
+            />
         </div>
     )
 }

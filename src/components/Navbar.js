@@ -6,8 +6,9 @@ import app from '../firebase'
 import { UnAuthenticatedNav,  AuthenticatedNav } from './shared'
 import { SignUpModal } from './SignUpModal'
 
+
 export const Navbar = () => {
-    const { currentUser } = useContext(AuthContext)
+    const { currentUser, setCurrentUser } = useContext(AuthContext)
     const [hamburger, setHamburger] = useState(false)
     const [hamburgerName, setHamburgerName] = useState('')
     const changeClassName  = () => {
@@ -20,7 +21,7 @@ export const Navbar = () => {
             .auth()
             .signOut()
         .then(function() {
-            console.log('sign out successful')
+            setCurrentUser(null)
         })
         .catch(function(error) {
             console.log(error)
