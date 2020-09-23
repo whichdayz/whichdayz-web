@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { HomeBanner } from '../../components/HomeBanner';
 
 export const Landing = () => {
     return (
-        <div>
-            This is the landing page
-        </div>
+        <>
+            <HomeBanner/>
+        </>
     )
 }
