@@ -8,7 +8,7 @@ import { useHistory } from 'react-router'
 
 export const Navbar = () => {
     const history = useHistory();
-  const { isLightTheme, light, dark, toggleTheme } = useContext(ThemeContext)
+    const { isLightTheme, light, dark, toggleTheme } = useContext(ThemeContext)
     const { currentUser, setCurrentUser } = useContext(AuthContext)
     const [hamburger, setHamburger] = useState(false)
     const [hamburgerName, setHamburgerName] = useState('')

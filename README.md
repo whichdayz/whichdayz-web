@@ -16,7 +16,13 @@
 - [x] Slick-carousel
 
 ## Screens
-- [ ] Home (/)
+- [ ] Landing (/)
+- [ ] UserHome (/)
+- [ ] FreelancerHome (/)
+- [ ] SignUp (/join)
+- [ ] SignIn (/login)
+- [ ] UserProfile (/profile)
+- [ ] FreelancerProfile (/profile)
 - [ ] Team (/team)
 - [x] About (/about)
 - [ ] 
@@ -29,11 +35,12 @@
 - [x] Navbar
 - [x] Hamburger
 - [x] Card
-- [ ] Footer
+- [x] Footer
 
 ## Glithes To Fix
 - Fix Icon component (Possible Fix: Make Icon seperate component)
 - Hamburger button does not open on first click
 - Home Carousel stops on hover?
+- Current User photoURL not rendering after sign up
 
 ## To Add
