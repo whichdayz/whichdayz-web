@@ -2,15 +2,30 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Hamburger, Button } from '../index'
 
-export const AuthenticatedNav = ({ logo, hamburgerName, changeClassName, currentUser, signOut }) => {
+export const AuthenticatedNav = ({ 
+        logo,
+        hamburgerName,
+        changeClassName,
+        currentUser,
+        signOut,
+        isLightTheme,
+        light,
+        dark,
+        toggleTheme
+    }) => {
+    const theme = isLightTheme ? light : dark
     return (
-        <nav className="navbar is-spaced is-primary" role="navigation" aria-label="main navigation">
+        <nav className={`navbar is-spaced is-${theme.nav}`} role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
                         <Link to='/' className='navbar-item'>
                             <img 
                                 src={logo} 
                                 alt='logo' 
-                                style={{maxHeight: '2.5em', display: 'block',margin: 'auto', borderRadius: '40%'}}
+                                style={{maxHeight: '2.5em', 
+                                        display: 'block',
+                                        margin: 'auto',
+                                        borderRadius: '40%'
+                                    }}
                             />
                         </Link>
                         <Hamburger 
@@ -37,8 +52,17 @@ export const AuthenticatedNav = ({ logo, hamburgerName, changeClassName, current
                         </div>
                         <div className="navbar-end">
                             <div className="navbar-item">
-                            <h1>{`Welcome ${currentUser.email}`}</h1>
+                                <figure class="image is-128x128">
+                                    <img src={currentUser.photoURL} alt='avatar' className='is-rounded' style={{maxHeight: '100%'}}/>
+                                </figure>
+                                <h1>{`Welcome ${currentUser.email}`}</h1>
                                 <div className="buttons">
+                                    <Button
+                                        title={isLightTheme ? '🌚': '🌝'}
+                                        className='has-text-weight-bold has-text-centered'
+                                        color={theme.drkModeBtn}
+                                        onClick={toggleTheme}
+                                    />
                                     <Button 
                                         title='Sign Out' 
                                         className='is-light has-text-weight-bold has-text-centered' 

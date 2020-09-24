@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import { Hamburger, Button } from '../index'
 
 
-export const UnAuthenticatedNav = ({logo, hamburgerName, changeClassName, onClick }) => {
+export const UnAuthenticatedNav = ({ logo, hamburgerName, changeClassName, isLightTheme, light, dark, toggleTheme }) => {
+    const theme = isLightTheme ? light : dark
     return (
-        <nav className="navbar is-spaced is-primary" role="navigation" aria-label="main navigation">
+        <nav className={`navbar is-spaced is-${theme.nav}`} role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <Link to='/' className='navbar-item'>
                     <img 
@@ -39,18 +40,28 @@ export const UnAuthenticatedNav = ({logo, hamburgerName, changeClassName, onClic
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
+                            <Button
+                                title={isLightTheme ? 'Light': 'Dark'}
+                                className='has-text-weight-bold has-text-centered'
+                                color={theme.drkModeBtn}
+                                onClick={toggleTheme}
+                            />
+                        <Link to='/login'>
                             <Button 
                                 title='Sign In' 
                                 className='is-light has-text-weight-bold has-text-centered' 
                                 color='primary'
-                                onClick={onClick}
+                                // onClick={onClick}
                             />
+                        </Link>
+                        <Link to='join'>
                             <Button 
                                     title='Get Started' 
                                     className='has-text-weight-bold has-text-centered' 
                                     color='success'
-                                    onClick={onClick}
-                                />
+                                    // onClick={onClick}
+                        />    
+                        </Link>
                         </div>
                     </div>
                 </div>

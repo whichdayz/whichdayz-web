@@ -1,19 +1,9 @@
 import React from 'react';
 import Typical from 'react-typical';
-// import Typist from 'react-typist'
-
-export default function About() {
+// import Typist from 'react-typist';
 
 
-//    const [ finished, setFinished ] = useState(false)
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setFinished('true')
-    //     }, 10000);
-    // }, [])
-
-
+export const HomeBanner = () => {
     return (
         <div className='pt-5'>
             <section className="hero is-medium is-primary is-bold">
