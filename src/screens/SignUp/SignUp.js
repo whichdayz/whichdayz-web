@@ -6,6 +6,7 @@ import { Subtitle } from '../../components/Subtitle'
 
 const SignUp = ({ history }) => {
     const [fileUrl, setFileUrl] = useState(null)
+    const [errorMessage, setErrorMessage] = useState('')
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
         const { email, password, freelancer } = event.target.elements;
