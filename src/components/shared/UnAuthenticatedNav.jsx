@@ -52,12 +52,13 @@ export const UnAuthenticatedNav = ({ logo, hamburgerName, changeClassName, isLig
                                 color='primary'
                                 onClick={onClick}
                             />
+                            <Link to='/join'>
                             <Button 
                                     title='Get Started' 
                                     className='has-text-weight-bold has-text-centered' 
                                     color='success'
-                                    onClick={onClick}
                                 />
+                            </Link>
                         </div>
                     </div>
                 </div>
