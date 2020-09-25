@@ -25,7 +25,6 @@
 - [ ] FreelancerProfile (/profile)
 - [ ] Team (/team)
 - [x] About (/about)
-- [ ] 
 - [x] Page Not Found
 
 ## Components 

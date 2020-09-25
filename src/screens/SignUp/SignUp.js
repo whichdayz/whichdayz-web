@@ -7,16 +7,18 @@ const SignUp = ({ history }) => {
     const [fileUrl, setFileUrl] = useState(null)
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
-        const { email, password, freelancer } = event.target.elements;
-        // console.log(email.value, password.value, freelancer.value);
+        const { email, password, freelancer, name } = event.target.elements;
+        console.log(email.value, password.value, freelancer.value, name.value);
         try {
             const userCred = await app
                 .auth()
                 .createUserWithEmailAndPassword(email.value, password.value);
             await userCred.user.updateProfile({
-                displayName: freelancer.value,
-                photoURL: fileUrl
+                displayName: name.value,
+                photoURL: fileUrl,
+                tenantId: freelancer.value
             })
+            // await userCred.user.updatePhoneNumber(freelancer.value)
             // uncomment below when ready for production
             // await userCred.user.sendEmailVerification();
             history.push('/');
@@ -43,10 +45,14 @@ const SignUp = ({ history }) => {
                     Password
                     <input name="password" type='password' placeholder='Password'/>
                 </label>
+                <label>
+                    Display Name
+                    <input name="name" type='text' placeholder='Display Name'/>
+                </label>
                 <label htmlFor="freelancer">Are you a freelancer?</label>
                     <select name="freelancer">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
+                        <option value={true}>Yes</option>
+                        <option value={false}>No</option>
                     </select>
                     <div className="file has-name is-boxed">
                         <label className="file-label">
