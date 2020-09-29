@@ -9,13 +9,17 @@ export const UserProfile = () => {
 
 
     useEffect(() => {
-        console.log(currentUser)
+        console.log('current user data', currentUser)
     }, [])
+
     return (
         <>
         <Card
         imageURL={currentUser.photoURL}
-        size={'4by2'}
+        size={'4by3'}
+        name={currentUser.displayName}
+        title={currentUser.email}
+        description={currentUser.i.D}
         />
         </>
     )
