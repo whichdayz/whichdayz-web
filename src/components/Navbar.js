@@ -6,6 +6,7 @@ import { ThemeContext } from '../contexts/ThemeContext'
 import app from '../firebase'
 import { UnAuthenticatedNav,  AuthenticatedNav } from './shared'
 import { SignUpModal } from './SignUpModal'
+import { useHistory } from 'react-router-dom'
 
 
 export const Navbar = () => {
@@ -18,12 +19,15 @@ export const Navbar = () => {
         return hamburger ? setHamburgerName('is-active') : setHamburgerName('')
     }
     const [modal, setModal ] = useState(false)
+    let history = useHistory();
+
     const signOut = () => {
         app
             .auth()
             .signOut()
         .then(function() {
             setCurrentUser(null)
+            history.push('/')
         })
         .catch(function(error) {
             console.log(error)

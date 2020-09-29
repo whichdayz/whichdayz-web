@@ -3,7 +3,7 @@ import * as firebase from 'firebase/app'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import './styles/SignUpModal.scss'
 
-export const SignUpModal = ({ className, onClick }) => {
+export const SignUpModal = ({ className, onClick, currentUser }) => {
 
     const uiConfig = {
         signInFlow: "popup",

@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { AuthContext } from '../../contexts/AuthContext'
+import { Card } from '../../components/Card'
+
 
 export const UserProfile = () => {
+
+    const { currentUser } = useContext(AuthContext)
+
+
+    useEffect(() => {
+        console.log(currentUser)
+    }, [])
     return (
-        <div>
-            Welcome to the user profile
-        </div>
+        <>
+        <Card
+        imageURL={currentUser.photoURL}
+        size={'4by2'}
+        />
+        </>
     )
 }
