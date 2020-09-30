@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { AuthContext } from '../../contexts/AuthContext'
+import { Card } from '../../components/Card'
 
 export const FreelancerProfile = () => {
+
+    const { currentUser } = useContext(AuthContext)
+
+    useEffect(() => {
+        console.log('current user data', currentUser)
+    }, [])
+
     return (
-        <div>
-            Welcome to the freelancer profile
-        </div>
-    )
+        <>
+        <Card
+        imageURL={currentUser.photoURL}
+        size={'4by3'}
+        name={currentUser.displayName}
+        title={currentUser.email}
+        description={currentUser.i.D}
+        />
+        </>
 }
