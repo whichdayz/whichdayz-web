@@ -20,4 +20,5 @@ export const FreelancerProfile = () => {
         description={currentUser.i.D}
         />
         </>
+    )
 }
