@@ -13,19 +13,21 @@ const schedulerData = [
   { startDate: '2018-11-01T12:00', endDate: '2018-11-01T13:30', title: 'Go to a gym' },
 ];
 
-export default () => (
-  <Paper>
-    <Scheduler
-      data={schedulerData}
-    >
-      <ViewState
-        currentDate={currentDate}
-      />
-      <DayView
-        startDayHour={9}
-        endDayHour={14}
-      />
-      <Appointments />
-    </Scheduler>
-  </Paper>
-);
+export const Schedule = () => {
+    return (
+        <Paper>
+        <Scheduler
+          data={schedulerData}
+        >
+          <ViewState
+            currentDate={currentDate}
+          />
+          <DayView
+            startDayHour={9}
+            endDayHour={14}
+          />
+          <Appointments />
+        </Scheduler>
+      </Paper>
+     )
+}

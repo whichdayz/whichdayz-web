@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
 import { Card } from '../../components/Card'
-import { Scheduler } from '../../components/Scheduler'
+import { Schedule } from '../../components/Schedule'
 
 export const FreelancerProfile = () => {
 
@@ -15,12 +15,12 @@ export const FreelancerProfile = () => {
         <>
         <Card
         imageURL={currentUser.photoURL}
-        size={'4by3'}
+        size={'3by2'}
         name={currentUser.displayName}
         title={currentUser.email}
         description={currentUser.i.D}
         />
-        <Scheduler/>
+        <Schedule/>
         </>
     )
 }
