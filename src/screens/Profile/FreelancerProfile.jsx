@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
 import { Card } from '../../components/Card'
+import { Scheduler } from '../../components/Scheduler'
 
 export const FreelancerProfile = () => {
 
@@ -19,6 +20,7 @@ export const FreelancerProfile = () => {
         title={currentUser.email}
         description={currentUser.i.D}
         />
+        <Scheduler/>
         </>
     )
 }
