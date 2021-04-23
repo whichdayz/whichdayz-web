@@ -3,6 +3,7 @@ import './styles/Card.scss'
 
 export const Card = ({ imageURL, description, name, title, size }) => {
     return (
+        <div class='column'>
         <div className='card margin'>
             <div className='card-image'>
                 <figure className={`image is-${size}`}>
@@ -18,6 +19,7 @@ export const Card = ({ imageURL, description, name, title, size }) => {
                     {description}
                 </div>
             </div>
+        </div>
         </div>
     )
 }

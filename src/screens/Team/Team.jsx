@@ -7,7 +7,7 @@ import { Card, Title }  from '../../components'
 
 export default function Team() {
     return (
-        <div class='is-columned '>
+        <div class='is-columned'>
         <>
             <Title
             size='1'
@@ -18,7 +18,7 @@ export default function Team() {
             color='success'
             />
         </>
-        <div class='is-flex'>
+        <div class='columns'>
             {teamArr.map(profile => {
                 return (
                     <Card

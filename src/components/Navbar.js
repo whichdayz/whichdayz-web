@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import logo from '../images/logo.png'
 import app from '../firebase'
+import { SignUpModal } from './SignUpModal'
 import { UnAuthenticatedNav,  AuthenticatedNav } from './shared'
 import { AuthContext } from '../contexts/AuthContext'
 import { ThemeContext } from '../contexts/ThemeContext'
@@ -8,10 +9,12 @@ import { useHistory } from 'react-router'
 
 export const Navbar = () => {
     const history = useHistory();
-  const { isLightTheme, light, dark, toggleTheme } = useContext(ThemeContext)
+    const { isLightTheme, light, dark, toggleTheme } = useContext(ThemeContext)
     const { currentUser, setCurrentUser } = useContext(AuthContext)
+    const [modal, setModal] = useState(false)
     const [hamburger, setHamburger] = useState(false)
     const [hamburgerName, setHamburgerName] = useState('')
+    // const [modalOpen, setModal ] = useState(false)
     const changeClassName  = () => {
         setHamburger(!hamburger)
         return hamburger ? setHamburgerName('is-active') : setHamburgerName('')
@@ -31,8 +34,16 @@ export const Navbar = () => {
             alert(error)
         });
     }
+
+    const modalRender = () => {
+  
+        return <SignUpModal
+                    className={modal ? 'modal is-active' : 'modal'}
+                    onClick={() => setModal(false)} 
+                />  
+  
+    }
     const toggleNav = () => {
-      console.log(isLightTheme, light, dark, toggleTheme);
         return currentUser ? <AuthenticatedNav
                                 logo={logo} 
                                 hamburgerName={hamburgerName} 
@@ -50,12 +61,16 @@ export const Navbar = () => {
                                 hamburgerName={hamburgerName} 
                                 changeClassName={changeClassName}
                                 isLightTheme={isLightTheme}
+                                toggleTheme={toggleTheme}
                                 light={light}
                                 dark={dark}
-                                toggleTheme={toggleTheme}
+                                onClick={() => setModal(true)}
                             />
     }
     return (
-        toggleNav()
+        <>
+        {toggleNav()}
+        {modalRender()}
+        </>
     )
 }
